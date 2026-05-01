@@ -1,0 +1,121 @@
+---
+kind: "ImageSetConfiguration"
+apiVersion: "mirror.openshift.io/v2alpha1"
+mirror:
+  platform:
+    graph: true
+    architectures:
+      - "amd64"
+    channels:
+      - name: "stable-4.20"
+        minVersion: "4.20.18"
+        maxVersion: "4.20.18"
+  operators:
+    - catalog: "registry.redhat.io/redhat/redhat-operator-index:v4.20"
+      targetCatalog: "redhat-operator-index-v4-20-disconected"
+      packages:
+        - name: "odf-operator"
+          defaultChannel: "stable-4.20"
+          channels:
+            - name: "stable-4.20"
+              minVersion: "4.20.9-rhodf"
+              maxVersion: "4.20.9-rhodf"
+
+        - name: "odf-dependencies"
+          defaultChannel: "stable-4.20"
+          channels:
+            - name: "stable-4.20"
+              minVersion: "4.20.9-rhodf"
+              maxVersion: "4.20.9-rhodf"
+
+        - name: "rook-ceph-operator"
+          defaultChannel: "stable-4.20"
+          channels:
+            - name: "stable-4.20"
+              minVersion: "4.20.9-rhodf"
+              maxVersion: "4.20.9-rhodf"
+
+        - name: "recipe"
+          defaultChannel: "stable-4.20"
+          channels:
+            - name: "stable-4.20"
+              minVersion: "4.20.9-rhodf"
+              maxVersion: "4.20.9-rhodf"
+
+        - name: "odf-prometheus-operator"
+          defaultChannel: "stable-4.20"
+          channels:
+            - name: "stable-4.20"
+              minVersion: "4.20.9-rhodf"
+              maxVersion: "4.20.9-rhodf"
+
+        - name: "odf-csi-addons-operator"
+          defaultChannel: "stable-4.20"
+          channels:
+            - name: "stable-4.20"
+              minVersion: "4.20.9-rhodf"
+              maxVersion: "4.20.9-rhodf"
+
+        - name: "ocs-operator"
+          defaultChannel: "stable-4.20"
+          channels:
+            - name: "stable-4.20"
+              minVersion: "4.20.9-rhodf"
+              maxVersion: "4.20.9-rhodf"
+
+        - name: "ocs-client-operator"
+          defaultChannel: "stable-4.20"
+          channels:
+            - name: "stable-4.20"
+              minVersion: "4.20.9-rhodf"
+              maxVersion: "4.20.9-rhodf"
+
+        - name: "mcg-operator"
+          defaultChannel: "stable-4.20"
+          channels:
+            - name: "stable-4.20"
+              minVersion: "4.20.9-rhodf"
+              maxVersion: 4.20.9-rhodf
+
+        - name: "cephcsi-operator"
+          defaultChannel: "stable-4.20"
+          channels:
+            - name: "stable-4.20"
+              minVersion: "4.20.9-rhodf"
+              maxVersion: "4.20.9-rhodf"
+
+        - name: "lvms-operator"
+          defaultChannel: "stable-4.20"
+          channels:
+            - name: "stable-4.20"
+              minVersion: "4.20.0"
+              maxVersion: "4.20.0"
+
+        - name: "advanced-cluster-management"
+          defaultChannel: "release-2.16"
+          channels:
+            - name: "release-2.16"
+              minVersion: "2.16.0"
+              maxVersion: "2.16.0"
+
+        - name: "multicluster-engine"
+          defaultChannel: "stable-2.11"
+          channels:
+            - name: "stable-2.11"
+              minVersion: "2.11.0"
+              maxVersion: "2.11.0"
+
+        - name: "topology-aware-lifecycle-manager"
+          defaultChannel: "stable"
+          channels:
+            - name: "stable"
+              minVersion: "4.20.2"
+              maxVersion: "4.20.2"
+
+        - name: "openshift-gitops-operator"
+          defaultChannel: "gitops-1.20"
+          channels:
+            - name: "gitops-1.20"
+              minVersion: "1.20.2"
+              maxVersion: "1.20.2"
+...
