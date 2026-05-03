@@ -1,0 +1,21 @@
+---
+- name: "Setup Ansible Environment"
+  hosts: "localhost"
+  connection: "local"
+  gather_facts: false
+
+  vars:
+    requirements_file: "./requirements.yaml"
+
+  tasks:
+    - name: "Install Ansible Galaxy collections"
+      ansible.builtin.command:
+        cmd: >
+          ansible-galaxy collection install -r {{ requirements_file }}
+      register: "galaxy_output"
+      changed_when: "'Installing' in galaxy_output.stdout"
+
+    - name: "Installation Status"
+      ansible.builtin.debug:
+        msg: "{{ galaxy_output.stdout_lines }}"
+...
